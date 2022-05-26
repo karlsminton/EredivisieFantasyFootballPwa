@@ -1,0 +1,25 @@
+{
+  "name": "eredivisiepwa",
+  "version": "1.0.0",
+  "description": "A PWA to provide the frontend of our Eredivisie Fantasy Football game.",
+  "main": "serviceWorker.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karlsminton/EredivisieFantasyFootballPwa.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karlsminton/EredivisieFantasyFootballPwa/issues"
+  },
+  "homepage": "https://github.com/karlsminton/EredivisieFantasyFootballPwa#readme",
+  "devDependencies": {
+    "del": "^6.1.1",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "node-sass": "^7.0.1"
+  }
+}
