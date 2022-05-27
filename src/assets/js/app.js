@@ -23,8 +23,8 @@ const routes = [
       component: Index
     },
     {
-      path: '/test',
-      name: 'test',
+      path: '/post',
+      name: 'post',
       component: Post,
       props: true,
     },
@@ -36,4 +36,4 @@ const router = createRouter({
   routes,
 })
 
-createApp(App).use(router).mount('main')
+createApp(App).use(router).mount('#app')
