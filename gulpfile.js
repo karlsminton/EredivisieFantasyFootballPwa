@@ -3,9 +3,9 @@ const sass = require('gulp-sass')(require('node-sass'));
 const del = require('del');
 
 gulp.task('styles', () => {
-  return gulp.src('assets/css/style.scss')
+  return gulp.src('src/assets/css/style.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('assets/css/'));
+    .pipe(gulp.dest('dist/'));
 });
 
 gulp.task('clean', () => {
