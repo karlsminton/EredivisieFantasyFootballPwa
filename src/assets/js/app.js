@@ -1,9 +1,10 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import { createApp } from 'vue'
+import { createWebHistory, createRouter } from 'vue-router'
 import App from './App.vue'
 import Post from './components/Post.vue'
 import Index from './components/Index.vue'
-Vue.use(Router)
+
+// const app = createApp(App).use(router).mount('main')
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
@@ -14,8 +15,8 @@ if ('serviceWorker' in navigator) {
   })
 }
 
-const router = new Router({
-  routes: [
+
+const routes = [
     {
       path: '/',
       name: 'home',
@@ -27,11 +28,12 @@ const router = new Router({
       component: Post,
       props: true,
     },
-  ]
+]
+
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
 })
 
-new Vue({
-  el: 'main',
-  render: h => h(App),
-  router
-})
+createApp(App).use(router).mount('main')
