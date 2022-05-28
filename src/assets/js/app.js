@@ -3,6 +3,8 @@ import { createWebHistory, createRouter } from 'vue-router'
 import App from './App.vue'
 import Post from './components/Post.vue'
 import Index from './components/Index.vue'
+import Login from './components/Login.vue'
+import Register from './components/Register.vue'
 
 // const app = createApp(App).use(router).mount('main')
 
@@ -28,6 +30,16 @@ const routes = [
       component: Post,
       props: true,
     },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: Register
+    }
 ]
 
 

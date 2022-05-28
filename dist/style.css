@@ -1,16 +1,31 @@
 body {
-  margin: 0; }
+  margin: 0;
+  background: #F2B145; }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 0; }
+  margin: 0;
+  text-transform: uppercase; }
+
+header, main, footer {
+  padding: 15px; }
 
 nav {
-  padding: 20px; }
+  padding: 15px 0; }
   nav > a {
     display: block;
     text-align: center;
     padding: 10px;
-    border-radius: 15px;
+    border-radius: 5px;
     border: 1px solid;
     margin-bottom: 10px;
     text-decoration: none; }
+
+form label, form .control {
+  display: block;
+  padding: 0 0 10px 0; }
+
+form input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px 5px;
+  font-size: 15px; }
