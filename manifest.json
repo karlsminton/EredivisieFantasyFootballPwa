@@ -3,8 +3,8 @@
   "short_name": "EFF",
   "start_url": "index.html",
   "display": "standalone",
-  "background_color": "#fff",
-  "theme_color": "#000",
+  "background_color": "#ff9001",
+  "theme_color": "#ff9001",
   "orientation": "portrait-primary",
   "icons": []
 }

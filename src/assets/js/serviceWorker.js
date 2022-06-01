@@ -2,8 +2,9 @@ const staticEredivisie = 'eredivisie-fantasy-football-v1'
 const assets = [
 	'/',
 	'/index.html',
-	'/assets/css/style.css',
-	'/assets/js/app.js',
+	'/style.css',
+	'/app.js',
+	'/font/Oswald/Oswald-Light.ttf'
 ]
 
 self.addEventListener('install', installEvent => {
