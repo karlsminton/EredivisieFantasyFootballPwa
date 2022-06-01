@@ -1,12 +1,10 @@
 import { createApp } from 'vue'
 import { createWebHistory, createRouter } from 'vue-router'
 import App from './App.vue'
-import Post from './components/Post.vue'
+import Standings from './components/Standings.vue'
 import Index from './components/Index.vue'
 import Login from './components/Login.vue'
 import Register from './components/Register.vue'
-
-// const app = createApp(App).use(router).mount('main')
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
@@ -25,9 +23,9 @@ const routes = [
       component: Index
     },
     {
-      path: '/post',
-      name: 'post',
-      component: Post,
+      path: '/standings',
+      name: 'standings',
+      component: Standings,
       props: true,
     },
     {

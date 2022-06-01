@@ -1,11 +1,62 @@
+html {
+  background-color: #FF9001;
+}
 body {
   margin: 0;
-  background: #F2B145;
+  font-family: 'Oswald', Sans-Serif;
+  color: #fff;
 }
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   text-transform: uppercase;
 }
-header, main, footer {
+header {
   padding: 15px;
+
+  > a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+main {
+  padding: 15px
+}
+footer {
+  padding: 15px;
+}
+
+table {
+  width: 100%;
+
+  tbody {
+    tr {
+      td {
+        padding: 5px 0;
+      }
+    }
+  }
+}
+
+footer {
+  copyright {
+    text-align: center;
+    display: block;
+  }
+}
+
+#alert {
+  margin: 0 auto 10px auto;
+
+  .msg {
+    margin: 0;
+    padding: 10px;
+    background-color: #fff;
+
+    &.error {
+      color: red;
+    }
+    &.success {
+      color: green;
+    }
+  }
 }

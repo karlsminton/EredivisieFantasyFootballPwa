@@ -1,13 +1,50 @@
+@font-face {
+  font-family: "Oswald";
+  src: url("./font/Oswald/Oswald-Light.ttf"); }
+
+html {
+  background-color: #FF9001; }
+
 body {
   margin: 0;
-  background: #F2B145; }
+  font-family: 'Oswald', Sans-Serif;
+  color: #fff; }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   text-transform: uppercase; }
 
-header, main, footer {
+header {
   padding: 15px; }
+  header > a {
+    color: inherit;
+    text-decoration: none; }
+
+main {
+  padding: 15px; }
+
+footer {
+  padding: 15px; }
+
+table {
+  width: 100%; }
+  table tbody tr td {
+    padding: 5px 0; }
+
+footer copyright {
+  text-align: center;
+  display: block; }
+
+#alert {
+  margin: 0 auto 10px auto; }
+  #alert .msg {
+    margin: 0;
+    padding: 10px;
+    background-color: #fff; }
+    #alert .msg.error {
+      color: red; }
+    #alert .msg.success {
+      color: green; }
 
 nav {
   padding: 15px 0; }
@@ -18,7 +55,10 @@ nav {
     border-radius: 5px;
     border: 1px solid;
     margin-bottom: 10px;
-    text-decoration: none; }
+    text-decoration: none;
+    color: #fff; }
+    nav > a.router-link-active {
+      color: #003DA5; }
 
 form label, form .control {
   display: block;
