@@ -89,10 +89,12 @@ form input {
   border-radius: 15px;
   max-height: 200px;
   background: #003DA5;
-  display: flex; }
+  display: flex;
+  overflow: hidden; }
   #bench .scroll {
     display: flex;
-    overflow-y: scroll; }
+    overflow-y: hidden;
+    overflow-x: scroll; }
     #bench .scroll .col {
       min-width: 20%;
       text-align: center; }

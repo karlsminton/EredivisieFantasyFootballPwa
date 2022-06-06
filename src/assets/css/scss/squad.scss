@@ -21,10 +21,12 @@
   max-height: 200px;
   background: #003DA5;
   display: flex;
+  overflow: hidden;
 
   .scroll {
     display: flex;
-    overflow-y: scroll;
+    overflow-y: hidden;
+    overflow-x: scroll;
 
     .col {
       min-width: 20%;

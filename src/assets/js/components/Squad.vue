@@ -2,16 +2,16 @@
   <section>
     <h2>Your Squad</h2>
     <div id="pitch">
-      <div id="goalkeeper" class="player-row"></div>
-      <div id="defender" class="player-row"></div>
-      <div id="midfielder" class="player-row"></div>
-      <div id="offence" class="player-row"></div>
+      <div id="goalkeeper" class="player-row" ondrop="drop(event)"></div>
+      <div id="defender" class="player-row" ondrop="drop(event)"></div>
+      <div id="midfielder" class="player-row" ondrop="drop(event)"></div>
+      <div id="offence" class="player-row" ondrop="drop(event)"></div>
     </div>
   </section>
   <section id="bench">
     <div class="scroll">
       <div class="col" v-for="player in bench">
-        <div class="player">
+        <div class="player" draggable="true">
           <img :src="player.icon" />
           <p class="name">{{ player.name }}</p>
           <span class="position">{{ player.position }}</span>
@@ -109,6 +109,18 @@ export default {
           position: 'midfielder',
         },
       ]
+    }
+  },
+  methods: {
+    /* TODO implement drag + drop */
+    allowDrop() {
+
+    },
+    drag() {
+
+    },
+    drop() {
+
     }
   }
 }
