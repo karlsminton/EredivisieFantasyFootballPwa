@@ -1,4 +1,5 @@
 const staticEredivisie = 'eredivisie-fantasy-football-v1'
+
 const assets = [
 	'/',
 	'/index.html',
