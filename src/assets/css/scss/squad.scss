@@ -1,0 +1,108 @@
+#pitch {
+  width: 100%;
+  height: 100vh;
+  margin-bottom: 160px;
+  background: #26a226;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -4px;
+    width: 500px;
+    height: 200px;
+    border: 4px solid rgba(255, 255, 255, 0.5);
+    left: 50%;
+    margin-left: -252px;
+    z-index: 0;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -250px;
+    width: 500px;
+    height: 500px;
+    border: 4px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    left: 50%;
+    margin-left: -250px;
+  }
+
+  .player-row {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+  }
+
+  #offence::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+  }
+}
+
+#bench {
+  position: fixed;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  border-radius: 15px;
+  max-height: 200px;
+  background: #003DA5;
+  display: flex;
+  overflow: hidden;
+  z-index: 1;
+
+  .scroll {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+
+    .col {
+      // width: 20%;
+      // min-width: 160px;
+
+      .player {
+        // padding: 20px;
+        // min-width: 160px;
+        // box-sizing: border-box;
+        // text-align: center;
+      }
+    }
+  }
+}
+
+.player {
+  padding: 20px;
+  width: 160px;
+  box-sizing: border-box;
+  text-align: center;
+
+  & > img {
+    width: 120px;
+  }
+
+  .name {
+    line-height: 16px;
+    margin: 10px 0;
+  }
+
+  .position {
+    display: none;
+  }
+}
