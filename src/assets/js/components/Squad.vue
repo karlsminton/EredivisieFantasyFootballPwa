@@ -2,19 +2,45 @@
   <section>
     <h2>Your Squad</h2>
     <div id="pitch">
-      <div id="goalkeeper" class="player-row" ondrop="drop(event)"></div>
-      <div id="defender" class="player-row" ondrop="drop(event)"></div>
-      <div id="midfielder" class="player-row" ondrop="drop(event)"></div>
-      <div id="offence" class="player-row" ondrop="drop(event)"></div>
+      <div
+          id="goalkeeper"
+          class="player-row"
+          v-on:drop="drop"
+          v-on:dragover="allowDrop"
+      ></div>
+      <div
+          id="defender"
+          class="player-row"
+          v-on:drop="drop"
+          v-on:dragover="allowDrop"
+      ></div>
+      <div
+          id="midfielder"
+          class="player-row"
+          v-on:drop="drop"
+          v-on:dragover="allowDrop"
+      ></div>
+      <div
+          id="offence"
+          class="player-row"
+          v-on:drop="drop"
+          v-on:dragover="allowDrop"
+      ></div>
     </div>
   </section>
   <section id="bench">
     <div class="scroll">
       <div class="col" v-for="player in bench">
-        <div class="player" draggable="true">
-          <img :src="player.icon" />
-          <p class="name">{{ player.name }}</p>
-          <span class="position">{{ player.position }}</span>
+        <div
+            class="player"
+            draggable="true"
+            v-on:dragstart="dragStart"
+            v-on:drag="dragging"
+            :id="player.name"
+        >
+            <img :src="player.icon" draggable="false"/>
+            <p class="name">{{ player.name }}</p>
+            <span class="position">{{ player.position }}</span>
         </div>
       </div>
     </div>
@@ -112,15 +138,18 @@ export default {
     }
   },
   methods: {
-    /* TODO implement drag + drop */
-    allowDrop() {
-
+    dragStart:function(event)  {
+      event.dataTransfer.setData("Text", event.target.id);
     },
-    drag() {
-
+    dragging:function(event) {},
+    allowDrop:function(event) {
+      event.preventDefault();
     },
-    drop() {
-
+    drop:function(event) {
+      event.preventDefault();
+      var data = event.dataTransfer.getData("Text");
+      console.log(data)
+      event.target.appendChild(document.getElementById(data));
     }
   }
 }
