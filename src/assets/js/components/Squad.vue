@@ -1,50 +1,57 @@
 <template>
-  <section>
-    <h2>Your Squad</h2>
-    <div id="pitch">
-      <div
-          id="goalkeeper"
-          class="player-row"
-          v-on:drop="drop"
-          v-on:dragover="allowDrop"
-      ></div>
-      <div
-          id="defender"
-          class="player-row"
-          v-on:drop="drop"
-          v-on:dragover="allowDrop"
-      ></div>
-      <div
-          id="midfielder"
-          class="player-row"
-          v-on:drop="drop"
-          v-on:dragover="allowDrop"
-      ></div>
-      <div
-          id="offence"
-          class="player-row"
-          v-on:drop="drop"
-          v-on:dragover="allowDrop"
-      ></div>
-    </div>
-  </section>
-  <section id="bench">
-    <div class="scroll">
-      <div class="col" v-for="player in bench">
-        <div
-            class="player"
-            draggable="true"
-            v-on:dragstart="dragStart"
-            v-on:drag="dragging"
-            :id="`player-${player.id}`"
-        >
-            <img :src="player.icon" draggable="false"/>
-            <p class="name">{{ player.name }}</p>
-            <span class="position">{{ player.position }}</span>
+    <section>
+        <h2>Your Squad</h2>
+        <div id="pitch">
+            <div
+                id="goalkeeper"
+                class="player-row"
+                v-on:drop="drop"
+                v-on:dragover="allowDrop"
+            ></div>
+            <div
+                id="defender"
+                class="player-row"
+                v-on:drop="drop"
+                v-on:dragover="allowDrop"
+            ></div>
+            <div
+                id="midfielder"
+                class="player-row"
+                v-on:drop="drop"
+                v-on:dragover="allowDrop"
+            ></div>
+            <div
+                id="offence"
+                class="player-row"
+                v-on:drop="drop"
+                v-on:dragover="allowDrop"
+            ></div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
+    <section id="bench">
+        <div
+            class="scroll"
+            v-on:drop="drop"
+            v-on:dragover="allowDrop"
+        >
+            <div
+                v-for="player in bench"
+                class="player"
+                draggable="true"
+                v-on:dragstart="dragStart"
+                v-on:drag="dragging"
+                :id="`player-${player.id}`"
+            >
+                <img :src="player.icon" draggable="false"/>
+                <p class="name">{{ player.name }}</p>
+                <span class="position">{{ player.position }}</span>
+            </div>
+        </div>
+    </section>
+    <!-- TODO hide form - allow submit of players to save -->
+    <form id="squad-form" class="hidden" action="/some-url" method="POST">
+        <input type="hidden" name="squad" />
+    </form>
 </template>
 
 <script>
@@ -162,14 +169,24 @@ export default {
     },
     drop(event) {
       event.preventDefault()
+      if (['player-row', 'scroll'].includes(event.target.className) === false) {
+        return
+      }
       var data = event.dataTransfer.getData("Text")
       var element = document.getElementById(data)
       var position = element.getElementsByClassName('position')[0].innerHTML
 
+
       /* TODO work into an alert system */
-      if (event.target.id !== position) {
+      if (event.target.id !== position && event.target.className !== 'scroll') {
         alert(`Player is a ${position}, can't place as a ${event.target.id}`)
-        return;
+        return
+      }
+
+      var players = document.getElementById('pitch').getElementsByClassName('player')
+      if (players.length > 10 && event.target.className !== 'scroll') {
+        alert('Can\'t add another player to the field.')
+        return
       }
 
       event.target.appendChild(element)
