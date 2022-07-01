@@ -42,11 +42,11 @@ export default {
       e.preventDefault()
       $.ajax({
         type: 'POST',
-        url: '#a',
-        data: {
+        url: 'http://api.modgento.com/register',
+        data: JSON.stringify({
           'email': 'ksm1nn0@gmail.com',
           'password': 'testpass123'
-        }
+        })
       })
       .done((result) => {
         $('#alert').html('<p class="msg success">You\'ve successfully registered.</p>')
