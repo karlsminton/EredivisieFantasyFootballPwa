@@ -44,8 +44,8 @@ export default {
         type: 'POST',
         url: 'http://api.modgento.com/register',
         data: JSON.stringify({
-          'email': 'ksm1nn0@gmail.com',
-          'password': 'testpass123'
+          email: 'ksm1nn0@gmail.com',
+          password: 'testpass123'
         })
       })
       .done((result) => {
